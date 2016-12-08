@@ -1,0 +1,99 @@
+.comment {
+  color: #efefef;
+  font-size: 0.5em !important;
+  display: inline-block;
+  padding: 5px !important;
+  background: #999;
+  border-radius: 4px;
+  
+}
+
+.rttxt {
+  text-align: right;
+}
+
+.smtxt8 {
+  font-size: 0.8em !important;
+}
+
+
+.smtxt7 {
+  font-size: 0.7em !important;
+}
+
+.smtxt5 {
+  font-size: 0.5em !important;
+}
+
+.smtxt4 {
+  font-size: 0.4em !important;
+}
+
+.lgtxt15 {
+  font-size: 1.5em !important;
+}
+
+/*flex classes*/
+.fcont { /*flex container tag*/
+  display: flex; 
+}
+
+.fdircol {
+  flex-direction: column;
+}
+
+.fjustcontaround {
+  justify-content: space-around;
+}
+
+.fjustcontbetween {
+  justify-content: space-between;
+}
+
+.fjustcontcenter {
+  justify-content: center;
+}
+
+.falignitemscenter {
+  align-items: center;
+}
+
+.falignselfcenter {
+  align-self: center;
+}
+
+.padbox {
+  padding: 10px;
+}
+
+.dontshow {
+  visibility: hidden;
+}
+
+/*images*/
+
+.intro-img {
+  width: 25%;
+  height: auto;
+}
+
+
+.intro-map {
+  width: 25%;
+  height: auto;
+}
+
+.website-img {
+  width: 45%;
+  height: auto;
+}
+
+
+
+a[href^="//"]:after, 
+a[href^="http://"]:after, 
+a[href^="https://"]:after {
+  content: url(../img/Icon_External_Link.png);
+  margin: 0 0 0 0;
+}
+

@@ -1,0 +1,525 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Visual Analysis of Survey Data</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/moon.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <div class='fcont fdircol falignitemscenter fjustcontaround smtxt4'>
+            <img class='intro-img' src="./img/waterOnEarth.jpg" alt="physical map">
+          </div>
+          <h3>Pulling information off the screen</h3>
+          <p class='smtxt9'>Increasing understanding and engagement with data physicalizations</p>
+          <p class='smtxt7'>Andrew M Staroscik, PhD</p>
+          <p class="smtxt5"><a href="http://andrewstaroscik.com">andrewstaroscik.com</a></p>
+          <p class='smtxt7 rttxt'>December 2016</p>
+
+         <!--  
+          put the about me stuff here
+            - PhD in Oceanography
+            - Very interested in education
+            - Have taught at many levels
+            - G k-12 fellow
+            - EPSCoR
+            - Adjunct Faculty at URI and RWU
+            - Run educational website - would like to devote more time to it but consulting pays the bills
+            - Interest in Data Visualization
+            - 3d printing hobby - entry drug to digital design and manufacturing
+
+            - Designing and making data physicalizations brings it all together.
+
+          -->
+            
+
+
+          
+        </section>
+        <section>
+
+          <div class='fcont fdircol falignitemscenter fjustcontaround smtxt4'>
+            <img class='intro-map' src="./img/marshalMap.jpg" alt="physical map">
+            <a href='http://dataphys.org/list/marshall-islands-stick-charts/'>Image source</a>
+          </div>
+
+          <div>
+          <p><strong>Data Physicalization</strong> - a physical artifact whose geometry or material properties encode data</p>
+          <p class="smtxt5 rttxt"><a href='https://hal.inria.fr/hal-01120152/document'>Jansen et. al. 2015</a></p>
+          </div>
+          <div class="smtxt8  fragment">
+            <ul>
+              <li>Long history</li>
+              <li>Diverse examples</li>
+              <li>Broad applicability</li>
+              <li class="fragment" style="color:peru;">Becoming easier and easier to do</li>
+            </ul>
+          </div>
+
+          <!--
+          notes: 
+              Huge topic
+              Old topic - predate visualizations
+              point to Marshal Island Map from 1862 and make the point that these types of representations are much, much older
+            -->
+
+
+        </section>
+        <section>
+          <section>
+            <h2>dataphys.org</h2>
+            <p class='smtxt8'>Primary source for historical information, literature, and examples</p>
+            <div class='fcont'>
+              <div class='fcont fdircol falignitemscenter fjustcontaround smtxt4'>
+                <img class='website-img' src="./img/physSite.png" alt="source website">
+                <a href='http://dataphys.org/list'>dataphys.org/list</a>
+              </div>
+              <div class='smtxt7 falignselfcenter'>
+                <ul>
+                  <li>257 entries (as of 12/2016)</li>
+                  <li>5500 BC - present day</li>
+                  <li>Examples from around the world</li>
+                </ul>  
+
+              </div>
+
+            </div>
+            <div class='fragment'> Examples &#8595; </div>
+            <!-- Could spend the whole talk covering cool examples from this site -->
+          </section>  
+          <!-- <section>
+          <img class='website-img' src="./img/thermoSurf1871.jpeg" alt="Themodynamic Surface">
+            <p><a href='http://dataphys.org/list/thermodynamic-surfaces/'>Thermodynamic surface - 1871</a><p>   
+            <p>geometry of the three-dimensional thermodynamic surface of the various states of existence of water</p>
+          </section> -->
+          <section>
+          <img class='website-img' src="./img/pinMap1907.png" alt="Pin Map">
+            <p><a href='http://dataphys.org/list/pin-maps/'>Pin Map - 1907</a><p>   
+            <p>Distribution of Harvard students 6 years after graduation</p>
+          </section>
+          <section>
+          <img class='website-img' src="./img/streetCar1913.png" alt="Frankfurt Streetcar Load">
+            <p><a href='http://dataphys.org/list/frankfurt-streetcar-load/'>Franfurt Streetcar Load - 1913</a><p>   
+            <p>Average number of passengers carried between two stops</p>
+          </section>
+          <section>
+          <img class='website-img' src="./img/handMotion1915.png" alt="Hand Motion">
+            <p><a href='http://dataphys.org/list/wire-models-of-factory-worker-movements/'>Factory Worker Hand Motion - 1915</a><p>   
+            <p>Wire diagram of hand motion while operating a drill press</p>
+          </section>
+          <section>
+          <img class='website-img' src="./img/energyCons1935.gif" alt="energy consumption">
+            <p><a href='http://dataphys.org/list/wire-models-of-factory-worker-movements/'>Stacked area Chart - 1935</a><p>   
+            <p>A year of daily energy consumption in Detroit</p>
+          </section>
+          <section>
+          <img class='website-img' src="./img/prudentailAds2015.png" alt="welfare data">
+            <p><a href='http://dataphys.org/list/dan-gilberts-tv-ads/'>Financial Planning Ads - 2015</a><p>   
+            <p>A series of Prudential ads using physical props to help illustrate financial planning considerations</p>
+            <div class="fcont fjustcontcenter falignitemscenter fragment smtxt7">
+              <div>Example of an <a href='http://datastori.es/80-indexical-visualization-with-dietmar-offenhuber/'>indexical visualization</a></div>
+              <img src="./img/tomatoIndex.jpg" alt="Tomato Index">
+            </div>
+          </section>
+          <section>
+          <img class='website-img' src="./img/yearOfWeather2009.jpg" alt="Year of Weather">
+            <p><a href='http://teemingvoid.blogspot.com.au/2009/10/weather-bracelet-3d-printed-data.html'>Weather bracelet - 2009</a><p>   
+            <p>A bracelet that encodes a year of daily temperatures and weekly rainfall</p>
+          </section>
+          <section>
+          <img class='website-img' src="./img/shrinkingsea2015.jpg" alt="Shrinking Sea">
+            <p><a href='https://petervojtek.github.io/diy/2015/07/14/aral-sea.html'>Shrinking sea - 2015</a><p>   
+            <p>3D paper model of water loss in the Aral Sea</p>
+          </section>
+          <section>
+            <div class='fcont fdircol'>
+              <div>Tools for the visually impaired</div>
+              <div class="fcont">
+                <div class='fcont fdircol'>          
+                  <div>
+                    <img src="./img/volShapes.jpg" alt="Shape Volumes">
+                  </div>
+                  <div class='smtxt4 rttxt'><a href='https://www.youmagine.com/designs/fixed-volume-objects'>(image credit)</a></div>
+                  <div>
+                    <a href="https://blogs.scientificamerican.com/guest-blog/teaching-blind-students-with-3-d-prints/">Volumes of solids</a>  
+                </div>
+
+                </div>
+                <div class='fcont fdircol'>
+                  <div>
+                    <img src="./img/hyperParab.png" alt="Curve paths">
+
+                  </div>
+                  <div class='smtxt4 rttxt'><a href'http://www.thingiverse.com/thing:1715953'>(image credit)</a></div>
+                  <div>
+                    <a href="http://tedxvirginiatech.com/2013/11/chelsea-cook-at-tedxvt-2013-creating-interfaces-creating-experiences/">Shapes of equations</a>
+                </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <img class='website-img' src="./img/rapid2.jpg" alt="Frankfurt Streetcar Load">
+            <p><a href='http://vis.cs.brown.edu/areas/projects/rapid.html'>physical representations of scientific data - 2004</a><p>   
+            <p class='smtxt8'>Work research at Brown University using 3D printing to create physical representations of scientific data</p>
+          </section>
+        </section>
+        <section>
+        <div class='fcont fdircol fjustcontbetween'>
+          <div>
+            <span class='smtxt9'>“These physical models complement displays in digital format by providing a hard-copy frame of reference that can be touched and manipulated with optimum hand-eye coordination and immediate results.” </span><a href='http://vis.cs.brown.edu/docs/pdf/Acevedo-2004-CRP.pdf'><span class='smtxt5'>- Acevedo et al, 2004</span></a>
+          </div>
+          <div style='height: 100px;'></div>
+          <div class='fragment smtxt8'>We engage with information differently in space. There is something more 'real' about an object you can pick up, feel the texture of or even just see in real space.</div>
+        </section>  
+
+        <!-- Rain Map - memorability -->
+        <section>
+          <div class="fcont fdircol">
+            <div>May 2015 - Wettest months on record in U.S.</div>
+            <div class='fragment fcont fdircol'>
+              <div>The Data</div>
+              <div><img src="./img/AHPSMaypptdiff.jpg" alt='May 2015 Rainfall'></div>
+              <div>Rainfall amounts as departures from normal</div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <section>
+            <div class="fcont fdircol">
+              <div>May 2015 - Wettest months on record in U.S.</div>
+              <div class='fcont fdircol'>
+                <div><a href="http://andrewstaroscik.com/views/2015/06/physical-representation-of-record-breaking-month-of-rain/">The Model</a></div>
+                <div><img src="./img/rainMap.jpg" alt='May 2015 Rainfall'></div>
+                <div class='dontshow'>Rainfall amounts as departures from normal</div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="fcont fdircol">
+              <div>May 2015 - Wettest months on record in U.S.</div>
+              <div class='fcont '>
+                <div>
+                  <img src="./img/rainMap.jpg" alt='May 2015 Rainfall'>
+                </div>
+                <div>
+                    <p class='smtxt8'>Differences in height capture regions of  high and low rainfall.</p>
+                    <p class='smtxt8'>Ability to manipulate the model provides strong perception of spatial relationship between regions.</p>
+                </div>
+              </div>
+              <div class='smtxt5'><a href="http://andrewstaroscik.com/views/2015/06/physical-representation-of-record-breaking-month-of-rain/">[Link to more]</a></div>
+            </div>
+          </section>
+        </section>
+
+        <!-- travel Map - personal connection -->
+        <section>
+          <div class="fcont fdircol">
+            <div>GPS data - Charting a local drive</div>
+            <div class='fragment fcont fdircol'>
+              <div>The Data</div>
+              <div><img src="./img/driveTrack.png" alt='Local drive' /></div>
+              <div>GPS track with location and speed</div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <section>
+            <div class="fcont fdircol">
+              <div>GPS data - Charting a local drive</div>
+              <div class='fcont fdircol'>
+                <div><a href="http://andrewstaroscik.com/views/2016/12/physical-trace-on-map-from-gps-track-data/">The Model</a></div>
+                <div><img src="./img/multiOver.jpg" alt='local drive model' /></div>
+                <div class='dontshow'>GPS track with location and speed</div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="fcont fdircol">
+            <div>GPS data - Charting a local drive</div>
+              <div class='fcont '>
+                <div>
+                  <img src="./img/multiOver.jpg" alt='local drive model' />
+                </div>
+                <div>                  
+                  <p class='smtxt7'>Model helps show spatial relationships.</p>
+                  <p class='smtxt7'>Personal connection with data increases engagement.</p>
+                  <p class='smtxt7'>Engagement increases understanding of local features.</p>        
+                  <img src="./img/gpsCloseUp.jpg" alt='local drive closeup' />
+                </div>
+              </div>
+              <div class='smtxt5'><a href="http://andrewstaroscik.com/views/2016/12/physical-trace-on-map-from-gps-track-data/">[Link to more]</a></div>  
+            </div>
+          </section>
+        </section>
+
+<!-- Minard Chart - Increased understanding -->
+        <section>
+          <div class="fcont fdircol">
+            <div>Napoleon’s March In 3d</div>
+            <div class='fragment fcont fdircol'>
+              <div>The Data</div>
+              <div><img src="./img/600px-Minard.png" alt='Minard Chart' /></div>
+              <div>Famous visualization showing loss of troops during Napoleon's ill fated invasion of Russia</div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <section>
+            <div class="fcont fdircol">
+              <div>Napoleon’s March In 3d</div>
+              <div class='fcont fdircol'>
+                <div><a href="http://andrewstaroscik.com/views/2015/09/napoleons-march-in-3d/">The Model</a></div>
+                <div><img src="./img/minard3d.jpg" alt='Minard 3D' /></div>
+                <div class='dontshow'>Famous visualization showing loss of troops during Napoleon's ill fated invasion of Russia</div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="fcont fdircol">
+            <div>Napoleon’s March In 3d</div>
+              <div class='fcont '>
+                <div>
+                  <img src="./img/minard3d.jpg" alt='Minard 3D' />
+                </div>
+                <div>                  
+                  <p class='smtxt8'>Encoding losses as vertical height improves understanding.</p>
+                </div>
+                
+              </div>
+                <div class='smtxt5'><a href="http://andrewstaroscik.com/views/2015/09/napoleons-march-in-3d/">[Link to more]</a></div>          
+            </div>
+          </section>
+        </section>
+
+<!-- Water on Earth - Improve sense of perspective -->
+        <section>
+          <div class="fcont fdircol">
+            <div>Water on Earth</div>
+            <div class='fragment fcont fdircol'>
+              <div>The Data</div>
+              <div><img src="./img/waterOnEarthV.jpg" alt='water on Earth diagram' /></div>
+              <div>Only a small amount of total water on Earth is available as fresh drinking water</div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <section>
+            <div class="fcont fdircol">
+              <div>Water on Earth</div>
+              <div class='fcont fdircol'>
+                <div><a href="http://andrewstaroscik.com/views/2013/07/scale-model-of-the-water-on-earth/">The Model</a></div>
+                <div><img src="./img/waterOnEarthsm.jpg" alt='Water on Earth model' /></div>
+                <div class='dontshow'>Only a small amount of total water on Earth is available as fresh drinking water</div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="fcont fdircol">
+            <div>Water on Earth</div>
+              <div class='fcont '>
+                <div>
+                  <img src="./img/waterOnEarthsm.jpg" alt='Minard 3D' />
+                </div>
+                <div>                  
+                  <p class='smtxt8'>Bringing volumes into real space makes relationships easier to compare.</p>
+                </div>
+              </div>
+              <div class='smtxt5'><a href="http://andrewstaroscik.com/views/2013/07/scale-model-of-the-water-on-earth/">[Link to more]</a></div>
+            </div>
+          </section>
+        </section>
+
+<!-- Stolen Years - Offers New Perspective -->
+        <section>
+          <div class="fcont fdircol">
+            <div>Gun deaths</div>
+            <div class='fragment fcont fdircol'>
+              <div><a href='http://guns.periscopic.com/?year=2013'>The Data</a></div>
+              <div>
+                <img src="./img/stolenYearsVis.png" alt='Periscopic Stolen Years Vis' />
+                <div class='smtxt4 rttxt'><a href'http://guns.periscopic.com/?year=2013'>(link to visulaization)</a></div>
+              </div>
+              <div>Stolen Years</div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <section>
+            <div class="fcont fdircol">
+              <div>Gun deaths</div>
+              <div class='fcont fdircol'>
+                <div><a href="http://andrewstaroscik.com/views/2015/11/three-days-4000-years/">The Model</a></div>
+                <div><img src="./img/stolenYearsMod.jpg" alt='Water on Earth model' /></div>
+                <div>3 days: 4,000 years</div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="fcont fdircol">
+            <div>Gun deaths</div>
+              <div class='fcont '>
+                <div>
+                  <img src="./img/stolenYearsMod.jpg" alt='Minard 3D' />
+                </div>
+                <div>                  
+                  <p class='smtxt8'>Emotional connection.</p>
+                  <p class='smtxt8'>Size of model offers perspective.</p>
+                  <img src="./img/stolenYearsCloseUp.jpg" alt='stolen years as bar chart' />
+                </div> 
+              </div>
+              <div class="smtxt5"><a href="http://andrewstaroscik.com/views/2015/11/three-days-4000-years/">[Link to more]</a></div>
+            </div>
+          </section>
+        </section>
+
+<!-- Three mugs - Making relationships real -->
+        <section>
+          <div class="fcont fdircol">
+            <div>Three mugs</div>
+            <div class='fragment fcont fdircol'>
+              <div><a href='http://www.unwater.org/downloads/Water_facts_and_trends.pdf'>The Data</a></div>
+              <div>
+                <img src="./img/perCapWaterData.png" alt='per Capita Water Consumption' />
+                <div class='smtxt4 rttxt'><a href'http://www.unwater.org/downloads/Water_facts_and_trends.pdf'>(data source)</a></div>
+              </div>
+              <div>Differences in Per Capita water consumption around the world</div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <section>
+            <div class="fcont fdircol">
+              <div>Three Mugs</div>
+              <div class='fcont fdircol'>
+                <div><a href="http://andrewstaroscik.com/views/2015/07/three-mugs/">The Model</a></div>
+                <div><img src="./img/threeMugs.jpg" alt='Water on Earth model' /></div>
+                <div class='dontshow'>Compare consumption to standard drink size.</div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="fcont fdircol">
+            <div>Three Mugs</div>
+              <div class='fcont '>
+                <div>
+                  <img src="./img/threeMugs.jpg" alt='Minard 3D' />
+                </div>
+                <div>                  
+                  <p class='smtxt8'>Data Physicalizations as props / performance.</p>
+                  <p class='smtxt8'>Provides the opportunity to make personal connection with the data.</p>
+                </div>
+                
+              </div>
+              <div class='smtxt5'><a href="http://andrewstaroscik.com/views/2015/07/three-mugs/">[Link to source]</a></div>
+            </div> 
+          </section>
+        </section>
+
+        <section>
+          <div>
+          <h2>Benefits</h2>
+            <ul>
+              <li>Provide an engaging experience</li>
+              <li>Offer novel perspective</li>
+              <li>Increase memorability</li>
+              <li>Allow personal connection to information</li>
+              <li>Improve understanding of scales and relationships</li>
+              <li>Make an emotional Impact</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Technical Considerations</h2>
+          <ul>
+            <li>
+            Process does not scale
+            <ul>
+              <li>Numbers</li>
+              <li>Size</li>
+            </ul>
+            </li>
+            <li>2d layering introduces mechanical weaknesses</li>
+            <li>Limited number of geometries possible</li>
+            <li>Technical skill and proper equipment required</li>
+          </ul>
+        </section>
+        <section>
+          <a href="http://andrewstaroscik.com/views/2015/08/more-wave-interferences-models/"><img src="./img/dblSltExp.jpg" alt="Double Slit Experiment"></a>
+          <h2>Thank You</h2>
+          <div>
+            <img style="vertical-align:middle; border: none;" src="./img/twitterLogoSmall.png" />
+            <span style=""><a href='https://twitter.com/andrewstaroscik'>@andrewstaroscik</a></span>
+          </div>
+          <div>
+            <img style="vertical-align:middle; border: none; width: 55px;" src="./img/email-icon.svg" />
+            <span>ams 'at' staroscik.com</span></div>
+
+        </section>
+       
+      </div> <!-- .slides -->
+    </div> <!-- .reveal -->
+
+   <!--  
+
+   at the end of the talk create a more links section and add some or all of these
+   links:
+
+    https://vivo.brown.edu/display/cbull
+    http://vis.cs.brown.edu/docs/pdf/Acevedo-2004-CRP.pdf
+
+    another example of physical math models: http://news.psu.edu/story/407124/2016/04/27/academics/3d-printing-creates-math-formulas-students-can-hold-their-hands 
+
+    3d printed sound scupltures: http://www.thisiscolossal.com/2015/04/turn-songs-into-3d-printed-sculptures-you-can-listen-to-with-reify/
+
+    3d printed charts for an annual report: http://www.3ders.org/articles/20160414-3d-printed-infographics-add-a-touch-of-playfulness-to-companys-annual-report.html
+
+    Another tool for the visually impaired: https://www.newscientist.com/article/2076693-3d-printed-display-lets-blind-people-explore-images-by-touch/
+
+
+
+
+    -->
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+      
+    </script>
+    
+    <script src="js/custom.js"></script>
+
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+        transition: 'none',
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+      ]
+      });
+    </script>
+  </body>
+</html>
